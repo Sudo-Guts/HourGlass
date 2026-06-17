@@ -63,7 +63,7 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 
 ## 📜 Diagrama de conexión
 
-![Logo]()
+![Logo](https://github.com/Sudo-Guts/HourGlass/blob/main/Diagrama.jpg)
 
 
 
