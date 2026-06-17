@@ -3,7 +3,6 @@
 Un reloj de arena electrónico con 60 partículas (LEDs) distribuidas en dos matrices 8×8 en cascada.  
 Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiempo y la gravedad, imitando el comportamiento de un reloj de arena real.
 
----
 
 ## 🧠 Características
 
@@ -16,7 +15,6 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
   - Buzzer que emite un pitido corto por cada grano que cae y alarma final.
 - **Modo configuración**: Permite ajustar el tiempo sin necesidad de reiniciar el microcontrolador.
 
----
 
 ## 🛠️ Hardware utilizado
 
@@ -51,16 +49,16 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 
 ## 📁 Estructura del repositorio
 
-hourglass/
-├── -[main.c](https://github.com/Sudo-Guts/HourGlass/blob/main/main.c)                      # Bucle principal y máquina de estados
-├── I2C.c / I2C.h               # Comunicación I2C (maestro)
-├── SPI.c / SPI.h               # Comunicación SPI (maestro)
-├── Matrix.c / Matrix.h         # Control de matrices MAX7219 (buffer, refresco)
-├── MPU6050.c / MPU6050.h       # Lectura del acelerómetro
-├── LCD.c / LCD.h               # Driver para LCD 16x2 en modo 4 bits
-├── Timer.c / Timer.h           # Timer1 para base de tiempo de 1 segundo
-├── Hourglass.c / Hourglass.h   # Lógica principal del reloj de arena
-└── README.md                   # Este archivo
+- hourglass/
+- ├── [main.c](https://github.com/Sudo-Guts/HourGlass/blob/main/main.c)                      # Bucle principal y máquina de estados
+- ├── I2C.c / I2C.h               # Comunicación I2C (maestro)
+- ├── SPI.c / SPI.h               # Comunicación SPI (maestro)
+- ├── Matrix.c / Matrix.h         # Control de matrices MAX7219 (buffer, refresco)
+- ├── MPU6050.c / MPU6050.h       # Lectura del acelerómetro
+- ├── LCD.c / LCD.h               # Driver para LCD 16x2 en modo 4 bits
+- ├── Timer.c / Timer.h           # Timer1 para base de tiempo de 1 segundo
+- ├── Hourglass.c / Hourglass.h   # Lógica principal del reloj de arena
+- └── README.md                   # Este archivo
 
 
 
