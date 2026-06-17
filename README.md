@@ -24,8 +24,8 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 | Matriz LED 8×8       | 2        | En cascada, controladas con MAX7219 (SPI)          |
 | MPU6050              | 1        | Acelerómetro/giroscopio (I2C)                      |
 | LCD 16×2             | 1        | Modo 4 bits (PORTD)                                |
-| Encoder rotatorio    | 1        | Pines PC0 (A), PC1 (B), PC3 (botón SET)            |
-| Botón pulsador       | 1        | Play/Pausa en PC2 (o PC0 según tu configuración)   |
+| Encoder rotatorio    | 1        | Pines PC2 (A), PC1 (B), PC3 (botón SET)            |
+| Botón pulsador       | 1        | Play/Pausa en PC0                                  |
 | Buzzer pasivo        | 1        | PB1                                                |
 
 ## 🔌 Diagrama de pines
@@ -36,17 +36,18 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 | PB1    | Buzzer                      |
 | PB2    | SS (selección esclavo SPI)  |
 | PB3    | MOSI                        |
-| PB4    | CLK                         |
-| PC0    | Encoder A / Botón 1         |
+| PB5    | CLK                         |
+| PC0    | Encoder / Botón 1           |
 | PC1    | Encoder B                   |
-| PC2    | (Encoder A? Ajusta según tu diseño) |
+| PC2    | Encoder A                   |
 | PC3    | Botón SET                   |
 | PC4    | SDA (I2C)                   |
 | PC5    | SCL (I2C)                   |
-| PD0-PD7| LCD (4 bits: D4-D7 + RS, E) |
+| PC6    | Botón RST                   |
+| PD0-PD5| LCD (4 bits: D0-D3 + RS, E) |
 
 
-## 📁 Estructura del repositorio
+## 📁 Estructura del proyecto
 
 - hourglass/
 - ├── [main.c](https://github.com/Sudo-Guts/HourGlass/blob/main/main.c)                      # Bucle principal y máquina de estados
