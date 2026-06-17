@@ -45,7 +45,6 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 | PC5    | SCL (I2C)                   |
 | PD0-PD7| LCD (4 bits: D4-D7 + RS, E) |
 
----
 
 ## 📁 Estructura del repositorio
 
