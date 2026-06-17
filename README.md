@@ -61,6 +61,11 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 - └── README.md                   # Este archivo
 
 
+## 📜 Diagrama de conexión
+
+![Logo]()
+
+
 
 
 
