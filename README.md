@@ -47,7 +47,7 @@ Detecta el volteo mediante un acelerómetro MPU6050 e invierte el flujo del tiem
 
 ## 📁 Estructura del proyecto
 
-hourglass/
+hourglass/  
 ├── [main.c](https://github.com/Sudo-Guts/HourGlass/blob/main/main.c)   # Bucle principal y máquina de estados  
 ├── [I2C.c](https://github.com/Sudo-Guts/HourGlass/blob/main/I2C.c) / [I2C.h](https://github.com/Sudo-Guts/HourGlass/blob/main/I2C.h)   # Comunicación I2C (maestro)  
 ├── [SPI.c](https://github.com/Sudo-Guts/HourGlass/blob/main/SPI.c) / [SPI.h](https://github.com/Sudo-Guts/HourGlass/blob/main/SPI.h)   # Comunicación SPI (maestro)  
