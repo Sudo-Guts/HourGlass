@@ -1,3 +1,15 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        Timer.h
+ *  Descripcion:    Libreria para el Timer1 del ATmega328P
+ *                  Genera una interrupcion cada 1 segundo (F_CPU = 1MHz, prescaler = 64, CTC)
+ *                  OCR1A   = (F_CPU / (prescaler * f_deseada)) - 1
+ *                          = (1000000 / (64 * 1)) - 1
+ *                          = 15624
+ * ------------------------------------------------------------
+ */
+
 #include "Timer.h"
 
 void Timer(void) {
@@ -5,14 +17,14 @@ void Timer(void) {
     TCCR1A = 0x00;
     TCCR1B = (1 << WGM12);
 
-    /* Valor de comparaci�n para 1 segundo exacto
+    /* Valor de comparacion para 1 segundo exacto
      * OCR1A = (1000000 / (64 * 1)) - 1 = 15624 */
     OCR1A = 15624;
 
     /* Reiniciar contador */
     TCNT1 = 0;
 
-    /* Habilitar interrupci�n por comparaci�n A */
+    /* Habilitar interrupcion por comparacion A */
     TIMSK1 = (1 << OCIE1A);
 }
 

@@ -1,11 +1,19 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        MPU6050.c
+ *  Descripcion:    Libreria para el MPU6050
+ * ------------------------------------------------------------
+ */
 
 #include "MPU6050.h"
 
 void MPU6050(void) {
+    I2C();                  // Iniciar I2C
     I2C_Start();
     I2C_Write(MPU6050_ADDR_W);
     I2C_Write(PWR_MGMT_1);
-    I2C_Write(0x00);      // despertar
+    I2C_Write(0x00);        // despertar
     I2C_Stop();
     _delay_ms(10);
 }
@@ -56,8 +64,7 @@ void MPU6050_ReadAll(int16_t *ax, int16_t *ay, int16_t *az) {
     I2C_Write(ACCEL_XOUT_H);
     I2C_Start();
     I2C_Write(MPU6050_ADDR_R);
-    for (uint8_t i = 0; i < 5; i++)
-        I2C_Read(&buf[i], 1);
+    for (uint8_t i = 0; i < 5; i++) I2C_Read(&buf[i], 1);
     I2C_Read(&buf[5], 0);
     I2C_Stop();
     *ax = (int16_t)((buf[0] << 8) | buf[1]);

@@ -1,3 +1,11 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        LCD.h
+ *  Descripcion:    Driver para LCD 16x2 en modo 4 bits.
+ * ------------------------------------------------------------
+ */
+
 #ifndef LCD_H
 #define LCD_H
 
@@ -6,22 +14,40 @@
 #include <util/delay.h>
 #define LCD_PORT PORTD
 
-// Inicializa el LCD en modo 4 bits
+/*
+ *  @brief          Inicializa el LCD en modo 4 bits.
+ */
 void LCD(void);
 
-// Envía una instrucción de 8 bits
+/*
+ *  @brief          Envia una instruccion de 8 bits.
+ *  @param inst     Byte a transmitir.
+ */
 void LCD_Inst(uint8_t inst);
 
-// Escribe un carácter o dato
+/*
+ *  @brief          Escribe un caracter o dato.
+ *  @param data     Dato a transmitir.
+ */
 void LCD_Data(uint8_t data);
 
-// Limpia la pantalla
+/*
+ *  @brief          Limpiar la pantalla.
+ */
 void LCD_Clear(void);
 
-// Posiciona cursor: nibble alto = renglón (0x00 o 0x10), bajo = columna
+/*
+ *  @brief          Posiciona cursor.
+ *  @param pos      nibble alto = renglón (0x00 o 0x10), bajo = columna.
+ */
 void LCD_Goto(uint8_t pos);
 
-// Escribe una cadena de longitud 'tam'
+/*
+ *  @brief          Escribe una cadena. 
+ *  @param cad      Cadena
+ *  a transmitir.
+ *  @param tam      Longitud de la cadena.
+ */
 void LCD_Write(char cad[], uint8_t tam);
 
 #endif

@@ -1,7 +1,12 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        Hourglass.c
+ *  Descripcion:    Logica del principal del reloj de arena.
+ * ------------------------------------------------------------
+ */
+
 #include "Hourglass.h"
-#include "Matrix.h"
-#include "MPU6050.h"
-#include <util/delay.h>
 
 /* ────────────────────────────────────────────────────────────
    CONSTANTES Y CONFIGURACIÓN
@@ -27,7 +32,7 @@ static uint8_t debe_dropear = 0;
 static uint8_t alarma_sonada = 0;
 
 /* ────────────────────────────────────────────────────────────
-   PROTOTIPOS DE FUNCIONES AUXILIARES (estáticas)
+   PROTOTIPOS DE FUNCIONES AUXILIARES
    ──────────────────────────────────────────────────────────── */
 static uint8_t obtener_matriz_superior(void);
 static uint8_t obtener_matriz_inferior(void);
@@ -41,7 +46,7 @@ static uint8_t soltar_particula(void);
 static void intercambiar_tiempo(void);
 
 /* ────────────────────────────────────────────────────────────
-   IMPLEMENTACIÓN DE FUNCIONES PÚBLICAS
+   IMPLEMENTACIÓN DE FUNCIONES PUBLICAS
    ──────────────────────────────────────────────────────────── */
 
 void Hourglass(void) {
@@ -155,7 +160,7 @@ void RelojArena_ForzarVolteo(void) {
 }
 
 /* ────────────────────────────────────────────────────────────
-   FUNCIONES AUXILIARES (estáticas, lógica interna)
+   FUNCIONES AUXILIARES 
    ──────────────────────────────────────────────────────────── */
 
 static uint8_t obtener_matriz_superior(void) {

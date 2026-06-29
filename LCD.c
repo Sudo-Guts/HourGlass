@@ -1,3 +1,10 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        LCD.c
+ *  Descripcion:    Driver para LCD 16x2 en modo 4 bits.
+ * ------------------------------------------------------------
+ */
 
 #include "LCD.h"
 
@@ -28,7 +35,7 @@ void LCD_Data(uint8_t data) {
 }
 
 void LCD(void) {
-	DDRD = 0X0FF;
+    DDRD = 0X0FF;
     _delay_ms(15);
     write4(0x03); _delay_ms(4);
     write4(0x03); _delay_us(100);
@@ -39,8 +46,6 @@ void LCD(void) {
     LCD_Inst(0x0C);   // display ON, cursor OFF
     LCD_Clear();
     LCD_Inst(0x06);   // incremento automático
-	
-	
 }
 
 void LCD_Clear(void) {
@@ -49,11 +54,8 @@ void LCD_Clear(void) {
 }
 
 void LCD_Goto(uint8_t pos) {
-    uint8_t addr = pos & 0x0F;
-    if ((pos & 0xF0) == 0)
-        addr |= 0x80;
-    else
-        addr |= 0xC0;
+    uint8_t addr = pos & 0x0F;                 // columna (0-15)
+    addr |= ((pos & 0xF0) == 0) ? 0x80 : 0xC0; // base de línea
     LCD_Inst(addr);
 }
 

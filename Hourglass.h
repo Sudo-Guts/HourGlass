@@ -1,27 +1,33 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        Hourglass.h
+ *  Descripcion:    Logica del principal del reloj de arena.
+ * ------------------------------------------------------------
+ */
+
 #ifndef HOURGLASS_H
 #define HOURGLASS_H
 
+#include <util/delay.h>
 #include <avr/io.h>
+#include "Matrix.h"
+#include "MPU6050.h"
 
-/* ────────────────────────────────────────────────────────────
-   Librería RelojArena – Reloj de arena con dos matrices LED 8x8
-   y detección de volteo mediante MPU6050.
-   ──────────────────────────────────────────────────────────── */
-
-/**
- * Inicializa el hardware del reloj de arena:
- *   - Matrices LED (MAX7219)
- *   - MPU6050 (acelerómetro)
- * Debe llamarse una vez al inicio, después de I2C() y SPI().
+/*
+ *  Inicializa el hardware del reloj de arena:
+ *      - Matrices LED (MAX7219)
+ *      - MPU6050 (acelerómetro)
+ *  Debe llamarse una vez al inicio, despues de I2C() y SPI().
  */
 void Hourglass(void);
 
-/**
- * Resetea completamente el reloj de arena.
- * @param minutos  Tiempo configurado en minutos (1..60).
- *                 El reloj durará exactamente esa cantidad de minutos.
- * Se vacían ambas matrices y se llena la matriz superior con 60 partículas.
- * Se reinician todos los contadores internos.
+/*
+ *  Resetea completamente el reloj de arena.
+ *  @param minutos  Tiempo configurado en minutos (1..60).
+ *                  El reloj durara exactamente esa cantidad de minutos.
+ *  Se vacían ambas matrices y se llena la matriz superior con 60 partículas.
+ *  Se reinician todos los contadores internos.
  */
 void Hourglass_Reiniciar(uint8_t minutos);
 

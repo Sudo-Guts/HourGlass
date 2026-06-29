@@ -1,3 +1,11 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        Matrix.h
+ *  Descripcion:    Control de matrices MAX7219 (buffer, refresco)
+ * ------------------------------------------------------------
+ */
+
 #ifndef MATRIX_H
 #define MATRIX_H
 
@@ -5,7 +13,7 @@
 #include <util/delay.h>
 #include "SPI.h"
 
-// Códigos MAX7219
+// Codigos MAX7219
 #define OP_NOOP        0x00
 #define OP_DIGIT0      0x01
 #define OP_DIGIT1      0x02
@@ -21,29 +29,55 @@
 #define OP_SHUTDOWN    0x0C
 #define OP_DISPLAYTEST 0x0F
 
-// Inicializa dos matrices MAX7219 en cascada
+/*
+ *  @brief          Inicializa dos matrices MAX7219 en cascada. 
+ */
 void Matrix(void);
 
-// Envía comando a una matriz específica (0=superior, 1=inferior)
+/*
+ *  @brief          Envia comando a una matriz especifica. 
+ *  @param op       Operacion.
+ *  @param data     Byte a transmitir.
+ *  @param matriz   (0=superior, 1=inferior).
+ */
 void Matrix_Write(uint8_t op, uint8_t data, uint8_t matriz);
 
-// Refresca el buffer en las matrices
+/*
+ *  @brief          Refresca el buffer en las matrices. 
+ */
 void Matrix_Refresh(void);
 
-// Enciende (1) o apaga (0) un píxel en (x, y): x=0..7, y=0..15
+/*
+ *  @brief          Enciende o apaga un pixel.
+ *  @param x        x=0..7.
+ *  @param y        y=0..15.
+ *  @param estado   1=encendido, 0=apagado.
+ */
 void Matrix_Pixel(uint8_t x, uint8_t y, uint8_t estado);
 
-// Limpia toda la pantalla
+/*
+ *  @brief          Limpia toda la pantalla. 
+ */
 void Matrix_Clear(void);
 
-// Lee el estado de un píxel del buffer interno (1=encendido, 0=apagado)
-// x=0..7, y=0..15
+/*
+ *  @brief          Lee el estado de un pixel del buffer interno.
+ *  @param x        x=0..7.
+ *  @param y        y=0..15.
+ *  @return         1=encendido, 0=apagado.
+ */
 uint8_t Matrix_GetPixel(uint8_t x, uint8_t y);
 
-// Animación de ejemplo
+/*
+ *  @brief          Animacion de inicio.
+ *  @param isUp     1 para matriz inferior, 0 para matriz superior.
+ */
 void Matrix_Animacion(uint8_t isUp);
 
-//Animación de caída de partículas (isUp=1 para caída normal, 0 para caída invertida)
+/*
+ *  @brief          Animacion de caida de particulas.
+ *  @param matriz   1 para caida normal, 0 para caida invertida.
+ */
 void Matrix_Caida(uint8_t matriz_inferior);
 
 #endif

@@ -1,3 +1,11 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        MPU6050.h
+ *  Descripcion:    Libreria para el MPU6050
+ * ------------------------------------------------------------
+ */
+
 #ifndef MPU6050_H
 #define MPU6050_H
 
@@ -11,19 +19,36 @@
 #define PWR_MGMT_1     0x6B
 #define ACCEL_XOUT_H   0x3B
 
-// Inicializa el MPU6050 (despierta del modo sleep)
+/*
+ *  @brief         Inicializa el MPU6050 e I2C (despierta del modo sleep).
+ */
 void MPU6050(void);
 
 // Lee aceleración en eje X (raw, ±2g → 16384 LSB/g)
+/*
+ *  @brief          Lee aceleracion en eje X (raw, ±2g → 16384 LSB/g).
+ *  @return         Aceleracion del eje X.
+ */
 int16_t MPU6050_ReadX(void);
 
-// Lee aceleración en eje Y
+/*
+ *  @brief          Lee aceleracion en eje Y.
+ *  @return         Aceleracion del eje Y.
+ */
 int16_t MPU6050_ReadY(void);
 
-// Lee aceleración en eje Z
+/*
+ *  @brief          Lee aceleracion en eje Z.
+ *  @return         Aceleracion del eje Z.
+ */
 int16_t MPU6050_ReadZ(void);
 
-// Lee los tres ejes de una sola vez (más eficiente)
+/*
+ *  @brief          Lee los tres ejes de una sola vez (mas eficiente).
+ *  @param *ax      Aceleracion del eje X.
+ *  @param *ay      Aceleracion del eje Y.
+ *  @param *az      Aceleracion del eje Z.
+ */
 void MPU6050_ReadAll(int16_t *ax, int16_t *ay, int16_t *az);
 
 #endif

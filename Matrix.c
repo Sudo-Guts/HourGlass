@@ -1,3 +1,11 @@
+/*  
+ * ------------------------------------------------------------
+ *  Autor:          Gustavo Ruiz Luis
+ *  Archivo:        Matrix.c
+ *  Descripcion:    Control de matrices MAX7219 (buffer, refresco)
+ * ------------------------------------------------------------
+ */
+
 #include "Matrix.h"
 
 static uint8_t buffer[16];
@@ -95,8 +103,7 @@ void Matrix_Animacion(uint8_t isUp) {
 	buffer[isUp + 1] = 0x7F;
 	buffer[isUp + 2] = 0x7F;
 	Matrix_Refresh();
-	_delay_ms(500);
-	
+	_delay_ms(500);	
 }
 
 void Matrix_Caida(uint8_t matriz_inferior) {
